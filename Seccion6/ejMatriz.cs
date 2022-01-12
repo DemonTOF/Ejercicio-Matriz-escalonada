@@ -32,11 +32,14 @@
                         califMax = calif[i][j];
                         mejorAlumno = $"Alumno Clase {i+1} Posición {j+1}";
                     }
+                    else if(calif[i][j] == califMax) mejorAlumno += $"\nAlumno Clase {i + 1} Posición {j + 1}";
+                    
                     if (calif[i][j] < califMin) // Obtenemos la peor nota
                     {
                         califMin = calif[i][j];
                         peorAlumno = $"Alumno Clase {i+1} Posición {j+1}";
                     }
+                    else if (calif[i][j] == califMin) peorAlumno += $"\nAlumno Clase {i + 1} Posición {j + 1}";                   
                 }
             }
             promedio = sumaCalif / sumaAlumnos;  // Calculamos promedio de calificaciones
@@ -54,10 +57,11 @@
                 //Console.Write("\n");
                 Console.Write(s + "\n");
             }
+            Console.Write("\n");
             Console.WriteLine($"Número de alumnos: {sumaAlumnos}");
             Console.WriteLine($"Promedio de notas: {promedio}");
-            Console.WriteLine($"Mejor nota {califMax}, {mejorAlumno}");
-            Console.WriteLine($"Peor nota {califMin}, {peorAlumno}");
+            Console.WriteLine($"Mejor nota {califMax}, \n{mejorAlumno}");
+            Console.WriteLine($"Peor nota {califMin}, \n{peorAlumno}");
         }
     }
 }
